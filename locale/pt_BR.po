@@ -1,0 +1,265 @@
+# Traduções para Português Brasileiro do Plugin ApprovalByMail
+# Copyright (C) 2024 Community
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: mailaprove 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Approval By Mail Configuration"
+msgstr "Configuração do Aprovação por E-mail"
+
+msgid "Missing Token"
+msgstr "Token Ausente"
+
+msgid "No approval token was provided. Please use the link from your email."
+msgstr "Nenhum token de aprovação foi fornecido. Por favor, use o link do seu e-mail."
+
+msgid "Already Processed"
+msgstr "Já Processado"
+
+msgid "This approval has already been processed. Each link can only be used once."
+msgstr "Esta aprovação já foi processada. Cada link só pode ser usado uma vez."
+
+msgid "Link Expired"
+msgstr "Link Expirado"
+
+msgid "This approval link has expired. Please log into GLPI to approve or reject the request."
+msgstr "Este link de aprovação expirou. Por favor, acesse o GLPI para aprovar ou rejeitar a solicitação."
+
+msgid "Invalid Link"
+msgstr "Link Inválido"
+
+msgid "This approval link is invalid. Please check your email for the correct link."
+msgstr "Este link de aprovação é inválido. Verifique seu e-mail para o link correto."
+
+msgid "Invalid Action"
+msgstr "Ação Inválida"
+
+msgid "Validation Not Found"
+msgstr "Validação Não Encontrada"
+
+msgid "The validation request was not found. It may have been deleted."
+msgstr "A solicitação de validação não foi encontrada. Ela pode ter sido excluída."
+
+msgid "Validation Approved"
+msgstr "Validação Aprovada"
+
+msgid "You have successfully approved the validation request for ticket #%d."
+msgstr "Você aprovou com sucesso a solicitação de validação do chamado #%d."
+
+msgid "Validation Rejected"
+msgstr "Validação Rejeitada"
+
+msgid "You have rejected the validation request for ticket #%d."
+msgstr "Você rejeitou a solicitação de validação do chamado #%d."
+
+msgid "Solution Approved"
+msgstr "Solução Aprovada"
+
+msgid "You have approved the solution for ticket #%d."
+msgstr "Você aprovou a solução do chamado #%d."
+
+msgid "Solution Rejected"
+msgstr "Solução Rejeitada"
+
+msgid "You have rejected the solution for ticket #%d."
+msgstr "Você rejeitou a solução do chamado #%d."
+
+msgid "Survey Submitted"
+msgstr "Pesquisa Enviada"
+
+msgid "Thank you for your feedback on ticket #%d!"
+msgstr "Obrigado pelo seu feedback sobre o chamado #%d!"
+
+msgid "Processing Error"
+msgstr "Erro de Processamento"
+
+msgid "An error occurred while processing the approval. Please try again or log into GLPI."
+msgstr "Ocorreu um erro ao processar a aprovação. Tente novamente ou acesse o GLPI."
+
+msgid "Satisfaction Survey"
+msgstr "Pesquisa de Satisfação"
+
+msgid "How satisfied were you with the resolution of your request?"
+msgstr "Quão satisfeito você ficou com a resolução da sua solicitação?"
+
+msgid "Reject Validation"
+msgstr "Rejeitar Validação"
+
+msgid "Reject Solution"
+msgstr "Rejeitar Solução"
+
+msgid "Please provide a reason for the rejection."
+msgstr "Por favor, forneça um motivo para a rejeição."
+
+msgid "Please provide a reason for rejecting the solution."
+msgstr "Por favor, forneça um motivo para a rejeição da solução."
+
+msgid "Please select a rating between 1 and 5 stars."
+msgstr "Por favor, selecione uma classificação entre 1 e 5 estrelas."
+
+msgid "You can close this window now."
+msgstr "Você pode fechar esta janela agora."
+
+msgid "If the problem persists, please log into GLPI directly."
+msgstr "Se o problema persistir, acesse o GLPI diretamente."
+
+msgid "Reason for rejection"
+msgstr "Motivo da rejeição"
+
+msgid "Please explain why you are rejecting this request..."
+msgstr "Por favor, explique por que você está rejeitando esta solicitação..."
+
+msgid "Confirm Rejection"
+msgstr "Confirmar Rejeição"
+
+msgid "Your rating"
+msgstr "Sua avaliação"
+
+msgid "Additional comments (optional)"
+msgstr "Comentários adicionais (opcional)"
+
+msgid "Share any additional feedback about the service..."
+msgstr "Compartilhe qualquer feedback adicional sobre o atendimento..."
+
+msgid "Submit Survey"
+msgstr "Enviar Pesquisa"
+
+msgid "Excellent"
+msgstr "Excelente"
+
+msgid "Very Good"
+msgstr "Muito Bom"
+
+msgid "Good"
+msgstr "Bom"
+
+msgid "Fair"
+msgstr "Regular"
+
+msgid "Poor"
+msgstr "Ruim"
+
+msgid "Ticket"
+msgstr "Chamado"
+
+msgid "Already Answered"
+msgstr "Já Respondido"
+
+msgid "This satisfaction survey has already been answered."
+msgstr "Esta pesquisa de satisfação já foi respondida."
+
+msgid "This satisfaction survey link has expired."
+msgstr "Este link da pesquisa de satisfação expirou."
+
+msgid "Survey Not Found"
+msgstr "Pesquisa Não Encontrada"
+
+msgid "The satisfaction survey was not found."
+msgstr "A pesquisa de satisfação não foi encontrada."
+
+msgid "An error occurred while submitting the survey."
+msgstr "Ocorreu um erro ao enviar a pesquisa."
+
+msgid "Approval Token"
+msgid_plural "Approval Tokens"
+msgstr[0] "Token de Aprovação"
+msgstr[1] "Tokens de Aprovação"
+
+msgid "Validation approval URL"
+msgstr "URL de aprovação da validação"
+
+msgid "Validation rejection URL"
+msgstr "URL de rejeição da validação"
+
+msgid "Solution acceptance URL"
+msgstr "URL de aceitação da solução"
+
+msgid "Solution rejection URL"
+msgstr "URL de rejeição da solução"
+
+msgid "Satisfaction survey URL"
+msgstr "URL da pesquisa de satisfação"
+
+msgid "Approved via email"
+msgstr "Aprovado via e-mail"
+
+msgid "Solution approved via email"
+msgstr "Solução aprovada via e-mail"
+
+msgid "Solution rejected via email. Reason: %s"
+msgstr "Solução rejeitada via e-mail. Motivo: %s"
+
+msgid "Approval By Mail"
+msgstr "Aprovação por E-mail"
+
+msgid "Approval By Mail — Configuration"
+msgstr "Aprovação por E-mail — Configuração"
+
+msgid "General Settings"
+msgstr "Configurações Gerais"
+
+msgid "Token expiration time (hours)"
+msgstr "Tempo de expiração do token (horas)"
+
+msgid "Links in emails will expire after this many hours."
+msgstr "Os links nos e-mails expirarão após estas horas."
+
+msgid "Features"
+msgstr "Funcionalidades"
+
+msgid "Ticket Validation Approval"
+msgstr "Aprovação de Validação de Chamado"
+
+msgid "Allow approving/rejecting ticket validations via email"
+msgstr "Permitir aprovar/rejeitar validações de chamados via e-mail"
+
+msgid "Solution Approval"
+msgstr "Aprovação de Solução"
+
+msgid "Allow accepting/rejecting ticket solutions via email"
+msgstr "Permitir aceitar/rejeitar soluções de chamados via e-mail"
+
+msgid "Allow answering satisfaction surveys via email"
+msgstr "Permitir responder pesquisas de satisfação via e-mail"
+
+msgid "Notification Template Tags"
+msgstr "Tags de Modelo de Notificação"
+
+msgid "Tag"
+msgstr "Tag"
+
+msgid "Description"
+msgstr "Descrição"
+
+msgid "URL to approve a validation request"
+msgstr "URL para aprovar uma solicitação de validação"
+
+msgid "URL to reject a validation request"
+msgstr "URL para rejeitar uma solicitação de validação"
+
+msgid "URL to approve a ticket solution"
+msgstr "URL para aprovar uma solução de chamado"
+
+msgid "URL to reject a ticket solution"
+msgstr "URL para rejeitar uma solução de chamado"
+
+msgid "URL for satisfaction survey"
+msgstr "URL da pesquisa de satisfação"
+
+msgid "Save Configuration"
+msgstr "Salvar Configuração"
+
+msgid "Configuration updated successfully."
+msgstr "Configuração atualizada com sucesso."
+
+msgid "Clean expired approval tokens"
+msgstr "Limpar tokens de aprovação expirados"

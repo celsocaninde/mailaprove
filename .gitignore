@@ -1,0 +1,44 @@
+# Composer
+composer.lock
+vendor/
+/vendor
+
+# IDE & Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# PHP/Development
+.env
+.env.local
+.env.*.local
+*.log
+*.phar
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Testing
+.phpunit.result.cache
+coverage/
+.coverage
+
+# Node (if using npm for assets)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+dist/
+build/
+
+# Backup files
+*.backup
+*.bak
+*.tmp

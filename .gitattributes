@@ -1,0 +1,46 @@
+# Normalize line endings to LF
+* text=auto
+
+# PHP
+*.php text eol=lf
+*.phtml text eol=lf
+
+# Markup
+*.html text eol=lf
+*.xml text eol=lf
+*.svg text eol=lf
+
+# Styles
+*.css text eol=lf
+*.scss text eol=lf
+
+# Scripts
+*.js text eol=lf
+*.json text eol=lf
+
+# Data
+*.po text eol=lf
+*.pot text eol=lf
+*.csv text eol=lf
+
+# Documentation
+*.md text eol=lf
+README* text eol=lf
+LICENSE text eol=lf
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.mov binary
+*.mp4 binary
+*.mp3 binary
+*.gz binary
+*.zip binary
+*.7z binary
+*.ttf binary
+*.otf binary
+*.fla binary
+*.flac binary

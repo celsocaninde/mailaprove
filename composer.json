@@ -1,0 +1,16 @@
+{
+    "name": "glpi-plugin/mailaprove",
+    "description": "Approve/reject ticket validations, solutions, and satisfaction surveys via email links",
+    "type": "glpi-plugin",
+    "license": "GPL-3.0-or-later",
+    "homepage": "https://github.com/community/mailaprove",
+    "authors": [
+        {
+            "name": "Community"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "glpi/glpi": ">=11.0"
+    }
+}
