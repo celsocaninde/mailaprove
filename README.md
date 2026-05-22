@@ -2,13 +2,24 @@
 
 > **Streamline ticket approvals directly from your inbox!** No login required, secure tokens, instant responses.
 
-[![License: GPL-3.0+](https://img.shields.io/badge/License-GPLv3%2B-blue.svg)](https://github.com/YOUR_REPO/mailaprove/blob/main/LICENSE)
+[![License: GPL-3.0+](https://img.shields.io/badge/License-GPLv3%2B-blue.svg)](https://github.com/celsocaninde/mailaprove/blob/main/LICENSE)
 [![GLPI 11](https://img.shields.io/badge/GLPI-11.x-2C8DBF.svg)](https://github.com/glpi-project/glpi)
 [![PHP 8.2+](https://img.shields.io/badge/PHP-8.2%2B-777BB4.svg)](https://www.php.net/)
 
 ---
 
+## 🌍 Language / Idioma
+
+- 🇺🇸 **English** ← You are here
+- 🇧🇷 [**Português (Brasil)**](README.pt-BR.md)
+
+---
+
 ## ✨ Overview
+
+<div align="center">
+  <img src="assets/icon.svg" alt="Mail Approve Icon" width="200" height="200">
+</div>
 
 **Mail Approve** is a powerful GLPI 11 plugin that transforms ticket workflows by allowing users to **approve, reject, and respond to surveys directly from their email inbox**. No GLPI login required, no authentication hassles – just secure, one-click actions with cryptographic token validation.
 
@@ -52,7 +63,7 @@
 cd /path/to/glpi/plugins/
 
 # Clone or download mailaprove
-git clone https://github.com/YOUR_REPO/mailaprove.git
+git clone https://github.com/celsocaninde/mailaprove.git
 # OR
 unzip mailaprove.zip
 ```
@@ -260,8 +271,8 @@ To add more languages, edit `.po` files in `locale/` and contribute!
 
 We welcome contributions! Please feel free to:
 
-- 🐛 Report bugs via [Issues](https://github.com/YOUR_REPO/mailaprove/issues)
-- 💡 Suggest features via [Discussions](https://github.com/YOUR_REPO/mailaprove/discussions)
+- 🐛 Report bugs via [Issues](https://github.com/celsocaninde/mailaprove/issues)
+- 💡 Suggest features via [Discussions](https://github.com/celsocaninde/mailaprove/discussions)
 - 🔧 Submit pull requests for improvements
 - 🌍 Help translate to new languages
 
@@ -292,9 +303,9 @@ Built with ❤️ for GLPI administrators and users worldwide.
 
 ## 📞 Support
 
-- 📖 **Documentation**: [Wiki](https://github.com/YOUR_REPO/mailaprove/wiki)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/YOUR_REPO/mailaprove/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/YOUR_REPO/mailaprove/discussions)
+- 📖 **Documentation**: [Wiki](https://github.com/celsocaninde/mailaprove/wiki)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/celsocaninde/mailaprove/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/celsocaninde/mailaprove/discussions)
 - 📧 **Email**: contact@example.com
 
 ---
