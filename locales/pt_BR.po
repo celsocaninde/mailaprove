@@ -1,0 +1,625 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mailaprove 1.0.4\n"
+"Report-Msgid-Bugs-To: https://github.com/celsocaninde/mailaprove/issues\n"
+"PO-Revision-Date: 2026-05-30 12:00+0000\n"
+"Last-Translator: Celso Caninde\n"
+"Language-Team: Celso Caninde\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Ação já processada"
+msgstr "Ação já processada"
+
+msgid "Este link já foi utilizado ou outra ação relacionada já foi concluída."
+msgstr "Este link já foi utilizado ou outra ação relacionada já foi concluída."
+
+msgid "Link expirado"
+msgstr "Link expirado"
+
+msgid "Este link expirou. Acesse o GLPI para continuar o atendimento."
+msgstr "Este link expirou. Acesse o GLPI para continuar o atendimento."
+
+msgid "Ação inválida"
+msgstr "Ação inválida"
+
+msgid "Este link não corresponde à ação solicitada."
+msgstr "Este link não corresponde à ação solicitada."
+
+msgid "Link inválido"
+msgstr "Link inválido"
+
+msgid "Não foi possível validar este link. Use o link original recebido por e-mail."
+msgstr "Não foi possível validar este link. Use o link original recebido por e-mail."
+
+msgid "Chamado não encontrado"
+msgstr "Chamado não encontrado"
+
+msgid "aberto em %s"
+msgstr "aberto em %s"
+
+msgid "solicitante: %s"
+msgstr "solicitante: %s"
+
+msgid "Chamado #%d"
+msgstr "Chamado #%d"
+
+msgid "Validação não encontrada"
+msgstr "Validação não encontrada"
+
+msgid "A solicitação de validação não foi encontrada. Ela pode ter sido removida no GLPI."
+msgstr "A solicitação de validação não foi encontrada. Ela pode ter sido removida no GLPI."
+
+msgid "Link inconsistente"
+msgstr "Link inconsistente"
+
+msgid "Este link não corresponde mais à validação do chamado informado."
+msgstr "Este link não corresponde mais à validação do chamado informado."
+
+msgid "Ação não autorizada"
+msgstr "Ação não autorizada"
+
+msgid "Este link pertence a outro aprovador."
+msgstr "Este link pertence a outro aprovador."
+
+msgid "Validação já processada"
+msgstr "Validação já processada"
+
+msgid "Esta validação já foi aprovada ou recusada no GLPI."
+msgstr "Esta validação já foi aprovada ou recusada no GLPI."
+
+msgid "Solução não encontrada"
+msgstr "Solução não encontrada"
+
+msgid "A solução informada neste link não foi encontrada."
+msgstr "A solução informada neste link não foi encontrada."
+
+msgid "Este link não corresponde mais à solução do chamado informado."
+msgstr "Este link não corresponde mais à solução do chamado informado."
+
+msgid "Somente o solicitante do chamado pode aceitar ou recusar a solução por e-mail."
+msgstr "Somente o solicitante do chamado pode aceitar ou recusar a solução por e-mail."
+
+msgid "Solução já processada"
+msgstr "Solução já processada"
+
+msgid "Esta solução já foi aceita ou recusada no GLPI."
+msgstr "Esta solução já foi aceita ou recusada no GLPI."
+
+msgid "Pesquisa não encontrada"
+msgstr "Pesquisa não encontrada"
+
+msgid "A pesquisa de satisfação informada neste link não foi encontrada."
+msgstr "A pesquisa de satisfação informada neste link não foi encontrada."
+
+msgid "Este link não corresponde mais à pesquisa do chamado informado."
+msgstr "Este link não corresponde mais à pesquisa do chamado informado."
+
+msgid "Somente o solicitante do chamado pode responder esta pesquisa por e-mail."
+msgstr "Somente o solicitante do chamado pode responder esta pesquisa por e-mail."
+
+msgid "Pesquisa já respondida"
+msgstr "Pesquisa já respondida"
+
+msgid "Esta pesquisa de satisfação já foi respondida."
+msgstr "Esta pesquisa de satisfação já foi respondida."
+
+msgid "Não foi possível processar"
+msgstr "Não foi possível processar"
+
+msgid "A ação não pôde ser concluída."
+msgstr "A ação não pôde ser concluída."
+
+msgid "usuário"
+msgstr "usuário"
+
+msgid "URL para aprovar validação"
+msgstr "URL para aprovar validação"
+
+msgid "URL para recusar validação"
+msgstr "URL para recusar validação"
+
+msgid "Botões de aprovação da validação"
+msgstr "Botões de aprovação da validação"
+
+msgid "URL para aceitar solução"
+msgstr "URL para aceitar solução"
+
+msgid "URL para recusar solução"
+msgstr "URL para recusar solução"
+
+msgid "Botões de aceite da solução"
+msgstr "Botões de aceite da solução"
+
+msgid "URL da pesquisa de satisfação"
+msgstr "URL da pesquisa de satisfação"
+
+msgid "Botão da pesquisa de satisfação"
+msgstr "Botão da pesquisa de satisfação"
+
+msgid "Revise a validação solicitada para este chamado."
+msgstr "Revise a validação solicitada para este chamado."
+
+msgid "Aprovar"
+msgstr "Aprovar"
+
+msgid "Recusar"
+msgstr "Recusar"
+
+msgid "Uma solução foi registrada. Confirme se ela resolveu sua solicitação."
+msgstr "Uma solução foi registrada. Confirme se ela resolveu sua solicitação."
+
+msgid "Aceitar solução"
+msgstr "Aceitar solução"
+
+msgid "Recusar solução"
+msgstr "Recusar solução"
+
+msgid "Sua opinião ajuda a melhorar a experiência de atendimento."
+msgstr "Sua opinião ajuda a melhorar a experiência de atendimento."
+
+msgid "Responder pesquisa"
+msgstr "Responder pesquisa"
+
+msgid "Configuração da aprovação por e-mail"
+msgstr "Configuração da aprovação por e-mail"
+
+msgid "Token ausente"
+msgstr "Token ausente"
+
+msgid "Nenhum token foi informado. Use o link original recebido por e-mail."
+msgstr "Nenhum token foi informado. Use o link original recebido por e-mail."
+
+msgid "Confirmar aceite da solução"
+msgstr "Confirmar aceite da solução"
+
+msgid "Revise o chamado antes de aceitar esta solução por e-mail."
+msgstr "Revise o chamado antes de aceitar esta solução por e-mail."
+
+msgid "Após confirmar, a solução será marcada como aceita no GLPI e os links relacionados serão invalidados."
+msgstr "Após confirmar, a solução será marcada como aceita no GLPI e os links relacionados serão invalidados."
+
+msgid "Solução aceita por e-mail"
+msgstr "Solução aceita por e-mail"
+
+msgid "Solução aceita"
+msgstr "Solução aceita"
+
+msgid "A solução do chamado #%d foi aceita com sucesso."
+msgstr "A solução do chamado #%d foi aceita com sucesso."
+
+msgid "Erro ao processar"
+msgstr "Erro ao processar"
+
+msgid "Não foi possível aceitar a solução. Acesse o GLPI para verificar o chamado."
+msgstr "Não foi possível aceitar a solução. Acesse o GLPI para verificar o chamado."
+
+msgid "Nenhum token de aprovação foi informado. Use o link original recebido por e-mail."
+msgstr "Nenhum token de aprovação foi informado. Use o link original recebido por e-mail."
+
+msgid "Confirmar aprovação"
+msgstr "Confirmar aprovação"
+
+msgid "Revise o chamado antes de aprovar esta validação por e-mail."
+msgstr "Revise o chamado antes de aprovar esta validação por e-mail."
+
+msgid "Aprovar validação"
+msgstr "Aprovar validação"
+
+msgid "Após confirmar, a validação será aprovada no GLPI e os links relacionados serão invalidados."
+msgstr "Após confirmar, a validação será aprovada no GLPI e os links relacionados serão invalidados."
+
+msgid "Aprovado por e-mail"
+msgstr "Aprovado por e-mail"
+
+msgid "Validação aprovada"
+msgstr "Validação aprovada"
+
+msgid "A validação do chamado #%d foi aprovada com sucesso."
+msgstr "A validação do chamado #%d foi aprovada com sucesso."
+
+msgid "Não foi possível aprovar a validação. Acesse o GLPI para verificar o chamado."
+msgstr "Não foi possível aprovar a validação. Acesse o GLPI para verificar o chamado."
+
+msgid "Auditoria da aprovação por e-mail"
+msgstr "Auditoria da aprovação por e-mail"
+
+msgid "Todos os status"
+msgstr "Todos os status"
+
+msgid "Sucesso"
+msgstr "Sucesso"
+
+msgid "Alerta"
+msgstr "Alerta"
+
+msgid "Erro"
+msgstr "Erro"
+
+msgid "Informação"
+msgstr "Informação"
+
+msgid "Revise links gerados, cliques, tokens expirados e tentativas com falha."
+msgstr "Revise links gerados, cliques, tokens expirados e tentativas com falha."
+
+msgid "Exportar CSV"
+msgstr "Exportar CSV"
+
+msgid "Voltar para configuração"
+msgstr "Voltar para configuração"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Evento contém"
+msgstr "Evento contém"
+
+msgid "Por página"
+msgstr "Por página"
+
+msgid "Aplicar"
+msgstr "Aplicar"
+
+msgid "Limpar"
+msgstr "Limpar"
+
+msgid "Nenhum evento de auditoria encontrado."
+msgstr "Nenhum evento de auditoria encontrado."
+
+msgid "Evento"
+msgstr "Evento"
+
+msgid "Chamado"
+msgstr "Chamado"
+
+msgid "Usuário"
+msgstr "Usuário"
+
+msgid "IP / Agente"
+msgstr "IP / Agente"
+
+msgid "Data"
+msgstr "Data"
+
+msgid "item"
+msgstr "item"
+
+msgid "token"
+msgstr "token"
+
+msgid "%1$d-%2$d de %3$d eventos"
+msgstr "%1$d-%2$d de %3$d eventos"
+
+msgid "Anterior"
+msgstr "Anterior"
+
+msgid "Próxima"
+msgstr "Próxima"
+
+msgid "Aprovação por e-mail"
+msgstr "Aprovação por e-mail"
+
+msgid "Configuração atualizada com sucesso."
+msgstr "Configuração atualizada com sucesso."
+
+msgid "Aprovação de validação"
+msgstr "Aprovação de validação"
+
+msgid "Permite aprovar ou recusar validações de chamados por e-mail"
+msgstr "Permite aprovar ou recusar validações de chamados por e-mail"
+
+msgid "Aceite de solução"
+msgstr "Aceite de solução"
+
+msgid "Permite aceitar ou recusar soluções de chamados por e-mail"
+msgstr "Permite aceitar ou recusar soluções de chamados por e-mail"
+
+msgid "Pesquisa de satisfação"
+msgstr "Pesquisa de satisfação"
+
+msgid "Permite responder pesquisas de satisfação por e-mail"
+msgstr "Permite responder pesquisas de satisfação por e-mail"
+
+msgid "Botões prontos para aprovar ou recusar uma validação"
+msgstr "Botões prontos para aprovar ou recusar uma validação"
+
+msgid "URL para aprovar uma validação"
+msgstr "URL para aprovar uma validação"
+
+msgid "URL para recusar uma validação"
+msgstr "URL para recusar uma validação"
+
+msgid "Botões prontos para aceitar ou recusar uma solução"
+msgstr "Botões prontos para aceitar ou recusar uma solução"
+
+msgid "URL para aceitar a solução do chamado"
+msgstr "URL para aceitar a solução do chamado"
+
+msgid "URL para recusar a solução do chamado"
+msgstr "URL para recusar a solução do chamado"
+
+msgid "Botão pronto para responder a pesquisa de satisfação"
+msgstr "Botão pronto para responder a pesquisa de satisfação"
+
+msgid "Bloco de e-mail para validação"
+msgstr "Bloco de e-mail para validação"
+
+msgid "Use no modelo de notificação de validação do chamado."
+msgstr "Use no modelo de notificação de validação do chamado."
+
+msgid "Bloco de e-mail para solução"
+msgstr "Bloco de e-mail para solução"
+
+msgid "Use no modelo de notificação de solução do chamado."
+msgstr "Use no modelo de notificação de solução do chamado."
+
+msgid "Bloco de e-mail para satisfação"
+msgstr "Bloco de e-mail para satisfação"
+
+msgid "Use no modelo de notificação da pesquisa de satisfação."
+msgstr "Use no modelo de notificação da pesquisa de satisfação."
+
+msgid "Modelo customizado da validação"
+msgstr "Modelo customizado da validação"
+
+msgid "Variáveis disponíveis: {{approve_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}."
+msgstr "Variáveis disponíveis: {{approve_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}."
+
+msgid "Modelo customizado da solução"
+msgstr "Modelo customizado da solução"
+
+msgid "Variáveis disponíveis: {{accept_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}."
+msgstr "Variáveis disponíveis: {{accept_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}."
+
+msgid "Modelo customizado da satisfação"
+msgstr "Modelo customizado da satisfação"
+
+msgid "Variáveis disponíveis: {{survey_url}}, {{ticket_id}}, {{ticket_name}}."
+msgstr "Variáveis disponíveis: {{survey_url}}, {{ticket_id}}, {{ticket_name}}."
+
+msgid "Controle links de aprovação para validações, soluções e pesquisas de satisfação."
+msgstr "Controle links de aprovação para validações, soluções e pesquisas de satisfação."
+
+msgid "%d de 3 recursos ativos"
+msgstr "%d de 3 recursos ativos"
+
+msgid "Configurações gerais"
+msgstr "Configurações gerais"
+
+msgid "Expiração do token (horas)"
+msgstr "Expiração do token (horas)"
+
+msgid "Os links enviados por e-mail expiram após este período."
+msgstr "Os links enviados por e-mail expiram após este período."
+
+msgid "Retenção de tokens usados (dias)"
+msgstr "Retenção de tokens usados (dias)"
+
+msgid "Mantém tokens processados por este período para investigação e rastreabilidade."
+msgstr "Mantém tokens processados por este período para investigação e rastreabilidade."
+
+msgid "Retenção da auditoria (dias)"
+msgstr "Retenção da auditoria (dias)"
+
+msgid "Eventos mais antigos serão removidos pelo cron do plugin."
+msgstr "Eventos mais antigos serão removidos pelo cron do plugin."
+
+msgid "Recursos"
+msgstr "Recursos"
+
+msgid "Tags dos modelos de notificação"
+msgstr "Tags dos modelos de notificação"
+
+msgid "Blocos de e-mail prontos"
+msgstr "Blocos de e-mail prontos"
+
+msgid "Copiar HTML"
+msgstr "Copiar HTML"
+
+msgid "Copiado"
+msgstr "Copiado"
+
+msgid "Modelos customizados dos botões"
+msgstr "Modelos customizados dos botões"
+
+msgid "Prévia"
+msgstr "Prévia"
+
+msgid "Usar exemplo"
+msgstr "Usar exemplo"
+
+msgid "Deixe em branco para usar o modelo padrão do plugin."
+msgstr "Deixe em branco para usar o modelo padrão do plugin."
+
+msgid "Prévia do modelo"
+msgstr "Prévia do modelo"
+
+msgid "Dados de chamado fictício são usados somente nesta prévia."
+msgstr "Dados de chamado fictício são usados somente nesta prévia."
+
+msgid "Fechar"
+msgstr "Fechar"
+
+msgid "Prévia do modelo customizado"
+msgstr "Prévia do modelo customizado"
+
+msgid "Prévia do e-mail"
+msgstr "Prévia do e-mail"
+
+msgid "Solicitação de validação"
+msgstr "Solicitação de validação"
+
+msgid "O e-mail gerado pode exibir ações de aprovação e recusa em botões claros."
+msgstr "O e-mail gerado pode exibir ações de aprovação e recusa em botões claros."
+
+msgid "Solução e satisfação"
+msgstr "Solução e satisfação"
+
+msgid "Use os blocos de solução e pesquisa nas notificações que seus usuários já recebem."
+msgstr "Use os blocos de solução e pesquisa nas notificações que seus usuários já recebem."
+
+msgid "Trilha de auditoria"
+msgstr "Trilha de auditoria"
+
+msgid "Ver tudo"
+msgstr "Ver tudo"
+
+msgid "Nenhum evento ainda"
+msgstr "Nenhum evento ainda"
+
+msgid "Os eventos aparecerão aqui quando links forem gerados ou utilizados."
+msgstr "Os eventos aparecerão aqui quando links forem gerados ou utilizados."
+
+msgid "Salvar configuração"
+msgstr "Salvar configuração"
+
+msgid "Selecione uma nota entre 1 e 5 estrelas."
+msgstr "Selecione uma nota entre 1 e 5 estrelas."
+
+msgid "Pesquisa enviada"
+msgstr "Pesquisa enviada"
+
+msgid "Obrigado pelo feedback sobre o chamado #%d."
+msgstr "Obrigado pelo feedback sobre o chamado #%d."
+
+msgid "Não foi possível enviar a pesquisa. Acesse o GLPI para verificar o chamado."
+msgstr "Não foi possível enviar a pesquisa. Acesse o GLPI para verificar o chamado."
+
+msgid "Informe o motivo da recusa."
+msgstr "Informe o motivo da recusa."
+
+msgid "Validação recusada"
+msgstr "Validação recusada"
+
+msgid "A validação do chamado #%d foi recusada."
+msgstr "A validação do chamado #%d foi recusada."
+
+msgid "Não foi possível recusar a validação. Acesse o GLPI para verificar o chamado."
+msgstr "Não foi possível recusar a validação. Acesse o GLPI para verificar o chamado."
+
+msgid "Informe o motivo da recusa da solução."
+msgstr "Informe o motivo da recusa da solução."
+
+msgid "Solução recusada por e-mail. Motivo: %s"
+msgstr "Solução recusada por e-mail. Motivo: %s"
+
+msgid "Solução recusada"
+msgstr "Solução recusada"
+
+msgid "A solução do chamado #%d foi recusada."
+msgstr "A solução do chamado #%d foi recusada."
+
+msgid "Não foi possível recusar a solução. Acesse o GLPI para verificar o chamado."
+msgstr "Não foi possível recusar a solução. Acesse o GLPI para verificar o chamado."
+
+msgid "Recusar validação"
+msgstr "Recusar validação"
+
+msgid "Sem título informado"
+msgstr "Sem título informado"
+
+msgid "Informe um motivo claro. Ele será registrado no histórico do chamado."
+msgstr "Informe um motivo claro. Ele será registrado no histórico do chamado."
+
+msgid "Motivo da recusa"
+msgstr "Motivo da recusa"
+
+msgid "Descreva de forma objetiva o motivo da recusa..."
+msgstr "Descreva de forma objetiva o motivo da recusa..."
+
+msgid "Confirmar recusa"
+msgstr "Confirmar recusa"
+
+msgid "Confirmar ação"
+msgstr "Confirmar ação"
+
+msgid "Revise os dados antes de continuar."
+msgstr "Revise os dados antes de continuar."
+
+msgid "Esta ação será registrada no GLPI e o link não poderá ser usado novamente."
+msgstr "Esta ação será registrada no GLPI e o link não poderá ser usado novamente."
+
+msgid "Confirmar"
+msgstr "Confirmar"
+
+msgid "Processado com segurança pelo GLPI"
+msgstr "Processado com segurança pelo GLPI"
+
+msgid "Ação concluída"
+msgstr "Ação concluída"
+
+msgid "Sua ação foi processada com sucesso."
+msgstr "Sua ação foi processada com sucesso."
+
+msgid "Você já pode fechar esta janela."
+msgstr "Você já pode fechar esta janela."
+
+msgid "Confirmação"
+msgstr "Confirmação"
+
+msgid "Não foi possível concluir a ação."
+msgstr "Não foi possível concluir a ação."
+
+msgid "Se o problema persistir, acesse o GLPI diretamente."
+msgstr "Se o problema persistir, acesse o GLPI diretamente."
+
+msgid "Como você avalia a resolução desta solicitação?"
+msgstr "Como você avalia a resolução desta solicitação?"
+
+msgid "Sua resposta ajuda a melhorar a qualidade do atendimento."
+msgstr "Sua resposta ajuda a melhorar a qualidade do atendimento."
+
+msgid "Sua nota"
+msgstr "Sua nota"
+
+msgid "Excelente"
+msgstr "Excelente"
+
+msgid "Muito bom"
+msgstr "Muito bom"
+
+msgid "Bom"
+msgstr "Bom"
+
+msgid "Regular"
+msgstr "Regular"
+
+msgid "Ruim"
+msgstr "Ruim"
+
+msgid "Comentário adicional (opcional)"
+msgstr "Comentário adicional (opcional)"
+
+msgid "Compartilhe algum detalhe sobre o atendimento..."
+msgstr "Compartilhe algum detalhe sobre o atendimento..."
+
+msgid "Enviar pesquisa"
+msgstr "Enviar pesquisa"
+
+msgid "Tipo de modelo desconhecido."
+msgstr "Tipo de modelo desconhecido."
+
+msgid "Este modelo está vazio. O bloco padrão do plugin será usado."
+msgstr "Este modelo está vazio. O bloco padrão do plugin será usado."
+
+msgid "Prévia de modelo vazio."
+msgstr "Prévia de modelo vazio."
+
+msgid "Solicitação de exemplo para acesso a notebook"
+msgstr "Solicitação de exemplo para acesso a notebook"
+
+msgid "Prévia gerada com dados de exemplo."
+msgstr "Prévia gerada com dados de exemplo."
+
+msgid "Approval Token"
+msgid_plural "Approval Tokens"
+msgstr[0] "Token de aprovação"
+msgstr[1] "Tokens de aprovação"
+
+msgid "Mail approval audit log"
+msgid_plural "Mail approval audit logs"
+msgstr[0] "Log de auditoria de aprovação por e-mail"
+msgstr[1] "Logs de auditoria de aprovação por e-mail"

@@ -1,0 +1,625 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: mailaprove 1.0.4\n"
+"Report-Msgid-Bugs-To: https://github.com/celsocaninde/mailaprove/issues\n"
+"PO-Revision-Date: 2026-05-30 12:00+0000\n"
+"Last-Translator: Celso Caninde\n"
+"Language-Team: Celso Caninde\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Ação já processada"
+msgstr "Action already processed"
+
+msgid "Este link já foi utilizado ou outra ação relacionada já foi concluída."
+msgstr "This link has already been used, or a related action has already been completed."
+
+msgid "Link expirado"
+msgstr "Link expired"
+
+msgid "Este link expirou. Acesse o GLPI para continuar o atendimento."
+msgstr "This link has expired. Sign in to GLPI to continue."
+
+msgid "Ação inválida"
+msgstr "Invalid action"
+
+msgid "Este link não corresponde à ação solicitada."
+msgstr "This link does not match the requested action."
+
+msgid "Link inválido"
+msgstr "Invalid link"
+
+msgid "Não foi possível validar este link. Use o link original recebido por e-mail."
+msgstr "This link could not be validated. Please use the original link from your email."
+
+msgid "Chamado não encontrado"
+msgstr "Ticket not found"
+
+msgid "aberto em %s"
+msgstr "opened on %s"
+
+msgid "solicitante: %s"
+msgstr "requester: %s"
+
+msgid "Chamado #%d"
+msgstr "Ticket #%d"
+
+msgid "Validação não encontrada"
+msgstr "Validation not found"
+
+msgid "A solicitação de validação não foi encontrada. Ela pode ter sido removida no GLPI."
+msgstr "The validation request was not found. It may have been removed in GLPI."
+
+msgid "Link inconsistente"
+msgstr "Inconsistent link"
+
+msgid "Este link não corresponde mais à validação do chamado informado."
+msgstr "This link no longer matches the validation for the specified ticket."
+
+msgid "Ação não autorizada"
+msgstr "Action not authorized"
+
+msgid "Este link pertence a outro aprovador."
+msgstr "This link belongs to a different approver."
+
+msgid "Validação já processada"
+msgstr "Validation already processed"
+
+msgid "Esta validação já foi aprovada ou recusada no GLPI."
+msgstr "This validation has already been approved or rejected in GLPI."
+
+msgid "Solução não encontrada"
+msgstr "Solution not found"
+
+msgid "A solução informada neste link não foi encontrada."
+msgstr "The solution referenced by this link was not found."
+
+msgid "Este link não corresponde mais à solução do chamado informado."
+msgstr "This link no longer matches the solution for the specified ticket."
+
+msgid "Somente o solicitante do chamado pode aceitar ou recusar a solução por e-mail."
+msgstr "Only the ticket requester can accept or reject the solution by email."
+
+msgid "Solução já processada"
+msgstr "Solution already processed"
+
+msgid "Esta solução já foi aceita ou recusada no GLPI."
+msgstr "This solution has already been accepted or rejected in GLPI."
+
+msgid "Pesquisa não encontrada"
+msgstr "Survey not found"
+
+msgid "A pesquisa de satisfação informada neste link não foi encontrada."
+msgstr "The satisfaction survey referenced by this link was not found."
+
+msgid "Este link não corresponde mais à pesquisa do chamado informado."
+msgstr "This link no longer matches the survey for the specified ticket."
+
+msgid "Somente o solicitante do chamado pode responder esta pesquisa por e-mail."
+msgstr "Only the ticket requester can answer this survey by email."
+
+msgid "Pesquisa já respondida"
+msgstr "Survey already answered"
+
+msgid "Esta pesquisa de satisfação já foi respondida."
+msgstr "This satisfaction survey has already been answered."
+
+msgid "Não foi possível processar"
+msgstr "Could not be processed"
+
+msgid "A ação não pôde ser concluída."
+msgstr "The action could not be completed."
+
+msgid "usuário"
+msgstr "user"
+
+msgid "URL para aprovar validação"
+msgstr "URL to approve validation"
+
+msgid "URL para recusar validação"
+msgstr "URL to reject validation"
+
+msgid "Botões de aprovação da validação"
+msgstr "Validation approval buttons"
+
+msgid "URL para aceitar solução"
+msgstr "URL to accept solution"
+
+msgid "URL para recusar solução"
+msgstr "URL to reject solution"
+
+msgid "Botões de aceite da solução"
+msgstr "Solution acceptance buttons"
+
+msgid "URL da pesquisa de satisfação"
+msgstr "Satisfaction survey URL"
+
+msgid "Botão da pesquisa de satisfação"
+msgstr "Satisfaction survey button"
+
+msgid "Revise a validação solicitada para este chamado."
+msgstr "Review the validation requested for this ticket."
+
+msgid "Aprovar"
+msgstr "Approve"
+
+msgid "Recusar"
+msgstr "Reject"
+
+msgid "Uma solução foi registrada. Confirme se ela resolveu sua solicitação."
+msgstr "A solution has been recorded. Please confirm whether it resolved your request."
+
+msgid "Aceitar solução"
+msgstr "Accept solution"
+
+msgid "Recusar solução"
+msgstr "Reject solution"
+
+msgid "Sua opinião ajuda a melhorar a experiência de atendimento."
+msgstr "Your feedback helps us improve the support experience."
+
+msgid "Responder pesquisa"
+msgstr "Answer survey"
+
+msgid "Configuração da aprovação por e-mail"
+msgstr "Approval By Mail configuration"
+
+msgid "Token ausente"
+msgstr "Missing token"
+
+msgid "Nenhum token foi informado. Use o link original recebido por e-mail."
+msgstr "No token was provided. Please use the original link from your email."
+
+msgid "Confirmar aceite da solução"
+msgstr "Confirm solution acceptance"
+
+msgid "Revise o chamado antes de aceitar esta solução por e-mail."
+msgstr "Review the ticket before accepting this solution by email."
+
+msgid "Após confirmar, a solução será marcada como aceita no GLPI e os links relacionados serão invalidados."
+msgstr "After confirming, the solution will be marked as accepted in GLPI and the related links will be invalidated."
+
+msgid "Solução aceita por e-mail"
+msgstr "Solution accepted by email"
+
+msgid "Solução aceita"
+msgstr "Solution accepted"
+
+msgid "A solução do chamado #%d foi aceita com sucesso."
+msgstr "The solution for ticket #%d was accepted successfully."
+
+msgid "Erro ao processar"
+msgstr "Processing error"
+
+msgid "Não foi possível aceitar a solução. Acesse o GLPI para verificar o chamado."
+msgstr "The solution could not be accepted. Sign in to GLPI to check the ticket."
+
+msgid "Nenhum token de aprovação foi informado. Use o link original recebido por e-mail."
+msgstr "No approval token was provided. Please use the original link from your email."
+
+msgid "Confirmar aprovação"
+msgstr "Confirm approval"
+
+msgid "Revise o chamado antes de aprovar esta validação por e-mail."
+msgstr "Review the ticket before approving this validation by email."
+
+msgid "Aprovar validação"
+msgstr "Approve validation"
+
+msgid "Após confirmar, a validação será aprovada no GLPI e os links relacionados serão invalidados."
+msgstr "After confirming, the validation will be approved in GLPI and the related links will be invalidated."
+
+msgid "Aprovado por e-mail"
+msgstr "Approved by email"
+
+msgid "Validação aprovada"
+msgstr "Validation approved"
+
+msgid "A validação do chamado #%d foi aprovada com sucesso."
+msgstr "The validation for ticket #%d was approved successfully."
+
+msgid "Não foi possível aprovar a validação. Acesse o GLPI para verificar o chamado."
+msgstr "The validation could not be approved. Sign in to GLPI to check the ticket."
+
+msgid "Auditoria da aprovação por e-mail"
+msgstr "Approval By Mail audit"
+
+msgid "Todos os status"
+msgstr "All statuses"
+
+msgid "Sucesso"
+msgstr "Success"
+
+msgid "Alerta"
+msgstr "Warning"
+
+msgid "Erro"
+msgstr "Error"
+
+msgid "Informação"
+msgstr "Information"
+
+msgid "Revise links gerados, cliques, tokens expirados e tentativas com falha."
+msgstr "Review generated links, clicks, expired tokens, and failed attempts."
+
+msgid "Exportar CSV"
+msgstr "Export CSV"
+
+msgid "Voltar para configuração"
+msgstr "Back to configuration"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Evento contém"
+msgstr "Event contains"
+
+msgid "Por página"
+msgstr "Per page"
+
+msgid "Aplicar"
+msgstr "Apply"
+
+msgid "Limpar"
+msgstr "Clear"
+
+msgid "Nenhum evento de auditoria encontrado."
+msgstr "No audit events found."
+
+msgid "Evento"
+msgstr "Event"
+
+msgid "Chamado"
+msgstr "Ticket"
+
+msgid "Usuário"
+msgstr "User"
+
+msgid "IP / Agente"
+msgstr "IP / Agent"
+
+msgid "Data"
+msgstr "Date"
+
+msgid "item"
+msgstr "item"
+
+msgid "token"
+msgstr "token"
+
+msgid "%1$d-%2$d de %3$d eventos"
+msgstr "%1$d-%2$d of %3$d events"
+
+msgid "Anterior"
+msgstr "Previous"
+
+msgid "Próxima"
+msgstr "Next"
+
+msgid "Aprovação por e-mail"
+msgstr "Approval By Mail"
+
+msgid "Configuração atualizada com sucesso."
+msgstr "Configuration updated successfully."
+
+msgid "Aprovação de validação"
+msgstr "Validation approval"
+
+msgid "Permite aprovar ou recusar validações de chamados por e-mail"
+msgstr "Lets users approve or reject ticket validations by email"
+
+msgid "Aceite de solução"
+msgstr "Solution acceptance"
+
+msgid "Permite aceitar ou recusar soluções de chamados por e-mail"
+msgstr "Lets users accept or reject ticket solutions by email"
+
+msgid "Pesquisa de satisfação"
+msgstr "Satisfaction survey"
+
+msgid "Permite responder pesquisas de satisfação por e-mail"
+msgstr "Lets users answer satisfaction surveys by email"
+
+msgid "Botões prontos para aprovar ou recusar uma validação"
+msgstr "Ready-to-use buttons to approve or reject a validation"
+
+msgid "URL para aprovar uma validação"
+msgstr "URL to approve a validation"
+
+msgid "URL para recusar uma validação"
+msgstr "URL to reject a validation"
+
+msgid "Botões prontos para aceitar ou recusar uma solução"
+msgstr "Ready-to-use buttons to accept or reject a solution"
+
+msgid "URL para aceitar a solução do chamado"
+msgstr "URL to accept the ticket solution"
+
+msgid "URL para recusar a solução do chamado"
+msgstr "URL to reject the ticket solution"
+
+msgid "Botão pronto para responder a pesquisa de satisfação"
+msgstr "Ready-to-use button to answer the satisfaction survey"
+
+msgid "Bloco de e-mail para validação"
+msgstr "Email block for validation"
+
+msgid "Use no modelo de notificação de validação do chamado."
+msgstr "Use it in the ticket validation notification template."
+
+msgid "Bloco de e-mail para solução"
+msgstr "Email block for solution"
+
+msgid "Use no modelo de notificação de solução do chamado."
+msgstr "Use it in the ticket solution notification template."
+
+msgid "Bloco de e-mail para satisfação"
+msgstr "Email block for satisfaction survey"
+
+msgid "Use no modelo de notificação da pesquisa de satisfação."
+msgstr "Use it in the satisfaction survey notification template."
+
+msgid "Modelo customizado da validação"
+msgstr "Custom validation template"
+
+msgid "Variáveis disponíveis: {{approve_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}."
+msgstr "Available variables: {{approve_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}."
+
+msgid "Modelo customizado da solução"
+msgstr "Custom solution template"
+
+msgid "Variáveis disponíveis: {{accept_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}."
+msgstr "Available variables: {{accept_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}."
+
+msgid "Modelo customizado da satisfação"
+msgstr "Custom satisfaction template"
+
+msgid "Variáveis disponíveis: {{survey_url}}, {{ticket_id}}, {{ticket_name}}."
+msgstr "Available variables: {{survey_url}}, {{ticket_id}}, {{ticket_name}}."
+
+msgid "Controle links de aprovação para validações, soluções e pesquisas de satisfação."
+msgstr "Manage approval links for validations, solutions, and satisfaction surveys."
+
+msgid "%d de 3 recursos ativos"
+msgstr "%d of 3 features enabled"
+
+msgid "Configurações gerais"
+msgstr "General settings"
+
+msgid "Expiração do token (horas)"
+msgstr "Token expiration (hours)"
+
+msgid "Os links enviados por e-mail expiram após este período."
+msgstr "Links sent by email expire after this period."
+
+msgid "Retenção de tokens usados (dias)"
+msgstr "Used token retention (days)"
+
+msgid "Mantém tokens processados por este período para investigação e rastreabilidade."
+msgstr "Keeps processed tokens for this period for investigation and traceability."
+
+msgid "Retenção da auditoria (dias)"
+msgstr "Audit retention (days)"
+
+msgid "Eventos mais antigos serão removidos pelo cron do plugin."
+msgstr "Older events will be removed by the plugin cron task."
+
+msgid "Recursos"
+msgstr "Features"
+
+msgid "Tags dos modelos de notificação"
+msgstr "Notification template tags"
+
+msgid "Blocos de e-mail prontos"
+msgstr "Ready-to-use email blocks"
+
+msgid "Copiar HTML"
+msgstr "Copy HTML"
+
+msgid "Copiado"
+msgstr "Copied"
+
+msgid "Modelos customizados dos botões"
+msgstr "Custom button templates"
+
+msgid "Prévia"
+msgstr "Preview"
+
+msgid "Usar exemplo"
+msgstr "Use example"
+
+msgid "Deixe em branco para usar o modelo padrão do plugin."
+msgstr "Leave blank to use the plugin's default template."
+
+msgid "Prévia do modelo"
+msgstr "Template preview"
+
+msgid "Dados de chamado fictício são usados somente nesta prévia."
+msgstr "Fictitious ticket data is used in this preview only."
+
+msgid "Fechar"
+msgstr "Close"
+
+msgid "Prévia do modelo customizado"
+msgstr "Custom template preview"
+
+msgid "Prévia do e-mail"
+msgstr "Email preview"
+
+msgid "Solicitação de validação"
+msgstr "Validation request"
+
+msgid "O e-mail gerado pode exibir ações de aprovação e recusa em botões claros."
+msgstr "The generated email can show approval and rejection actions as clear buttons."
+
+msgid "Solução e satisfação"
+msgstr "Solution and satisfaction"
+
+msgid "Use os blocos de solução e pesquisa nas notificações que seus usuários já recebem."
+msgstr "Use the solution and survey blocks in the notifications your users already receive."
+
+msgid "Trilha de auditoria"
+msgstr "Audit trail"
+
+msgid "Ver tudo"
+msgstr "View all"
+
+msgid "Nenhum evento ainda"
+msgstr "No events yet"
+
+msgid "Os eventos aparecerão aqui quando links forem gerados ou utilizados."
+msgstr "Events will appear here when links are generated or used."
+
+msgid "Salvar configuração"
+msgstr "Save configuration"
+
+msgid "Selecione uma nota entre 1 e 5 estrelas."
+msgstr "Please select a rating from 1 to 5 stars."
+
+msgid "Pesquisa enviada"
+msgstr "Survey submitted"
+
+msgid "Obrigado pelo feedback sobre o chamado #%d."
+msgstr "Thank you for your feedback on ticket #%d."
+
+msgid "Não foi possível enviar a pesquisa. Acesse o GLPI para verificar o chamado."
+msgstr "The survey could not be submitted. Sign in to GLPI to check the ticket."
+
+msgid "Informe o motivo da recusa."
+msgstr "Please provide a reason for the rejection."
+
+msgid "Validação recusada"
+msgstr "Validation rejected"
+
+msgid "A validação do chamado #%d foi recusada."
+msgstr "The validation for ticket #%d was rejected."
+
+msgid "Não foi possível recusar a validação. Acesse o GLPI para verificar o chamado."
+msgstr "The validation could not be rejected. Sign in to GLPI to check the ticket."
+
+msgid "Informe o motivo da recusa da solução."
+msgstr "Please provide a reason for rejecting the solution."
+
+msgid "Solução recusada por e-mail. Motivo: %s"
+msgstr "Solution rejected by email. Reason: %s"
+
+msgid "Solução recusada"
+msgstr "Solution rejected"
+
+msgid "A solução do chamado #%d foi recusada."
+msgstr "The solution for ticket #%d was rejected."
+
+msgid "Não foi possível recusar a solução. Acesse o GLPI para verificar o chamado."
+msgstr "The solution could not be rejected. Sign in to GLPI to check the ticket."
+
+msgid "Recusar validação"
+msgstr "Reject validation"
+
+msgid "Sem título informado"
+msgstr "No title provided"
+
+msgid "Informe um motivo claro. Ele será registrado no histórico do chamado."
+msgstr "Provide a clear reason. It will be recorded in the ticket history."
+
+msgid "Motivo da recusa"
+msgstr "Reason for rejection"
+
+msgid "Descreva de forma objetiva o motivo da recusa..."
+msgstr "Briefly describe the reason for the rejection..."
+
+msgid "Confirmar recusa"
+msgstr "Confirm rejection"
+
+msgid "Confirmar ação"
+msgstr "Confirm action"
+
+msgid "Revise os dados antes de continuar."
+msgstr "Review the details before continuing."
+
+msgid "Esta ação será registrada no GLPI e o link não poderá ser usado novamente."
+msgstr "This action will be recorded in GLPI and the link cannot be used again."
+
+msgid "Confirmar"
+msgstr "Confirm"
+
+msgid "Processado com segurança pelo GLPI"
+msgstr "Securely processed by GLPI"
+
+msgid "Ação concluída"
+msgstr "Action completed"
+
+msgid "Sua ação foi processada com sucesso."
+msgstr "Your action was processed successfully."
+
+msgid "Você já pode fechar esta janela."
+msgstr "You can now close this window."
+
+msgid "Confirmação"
+msgstr "Confirmation"
+
+msgid "Não foi possível concluir a ação."
+msgstr "The action could not be completed."
+
+msgid "Se o problema persistir, acesse o GLPI diretamente."
+msgstr "If the problem persists, access GLPI directly."
+
+msgid "Como você avalia a resolução desta solicitação?"
+msgstr "How would you rate the resolution of this request?"
+
+msgid "Sua resposta ajuda a melhorar a qualidade do atendimento."
+msgstr "Your response helps us improve the quality of support."
+
+msgid "Sua nota"
+msgstr "Your rating"
+
+msgid "Excelente"
+msgstr "Excellent"
+
+msgid "Muito bom"
+msgstr "Very good"
+
+msgid "Bom"
+msgstr "Good"
+
+msgid "Regular"
+msgstr "Fair"
+
+msgid "Ruim"
+msgstr "Poor"
+
+msgid "Comentário adicional (opcional)"
+msgstr "Additional comment (optional)"
+
+msgid "Compartilhe algum detalhe sobre o atendimento..."
+msgstr "Share any details about the support you received..."
+
+msgid "Enviar pesquisa"
+msgstr "Submit survey"
+
+msgid "Tipo de modelo desconhecido."
+msgstr "Unknown template type."
+
+msgid "Este modelo está vazio. O bloco padrão do plugin será usado."
+msgstr "This template is empty. The plugin's default block will be used."
+
+msgid "Prévia de modelo vazio."
+msgstr "Empty template preview."
+
+msgid "Solicitação de exemplo para acesso a notebook"
+msgstr "Sample request for laptop access"
+
+msgid "Prévia gerada com dados de exemplo."
+msgstr "Preview generated with sample data."
+
+msgid "Approval Token"
+msgid_plural "Approval Tokens"
+msgstr[0] "Approval Token"
+msgstr[1] "Approval Tokens"
+
+msgid "Mail approval audit log"
+msgid_plural "Mail approval audit logs"
+msgstr[0] "Mail approval audit log"
+msgstr[1] "Mail approval audit logs"

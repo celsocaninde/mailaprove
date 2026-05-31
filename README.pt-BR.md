@@ -196,9 +196,9 @@ mailaprove/
 │   ├── action_confirm.php   # Página de confirmação
 │   ├── reject_form.php      # UI do formulário de rejeição
 │   └── satisfaction_form.php # UI da pesquisa de satisfação
-└── locale/
-    ├── en_US.po             # Traduções em Inglês
-    └── pt_BR.po             # Traduções em Português
+└── locales/
+    ├── en_US.po / en_US.mo  # Traduções em Inglês (fonte + compilado)
+    └── pt_BR.po / pt_BR.mo  # Traduções em Português (fonte + compilado)
 ```
 
 ---
@@ -266,7 +266,7 @@ O Mail Approve suporta múltiplos idiomas:
 - 🇺🇸 **Inglês (en_US)**
 - 🇧🇷 **Português - Brasil (pt_BR)**
 
-Para adicionar mais idiomas, edite arquivos `.po` em `locale/` e contribua!
+Para adicionar mais idiomas, edite arquivos `.po` em `locales/`, compile com `msgfmt seu_idioma.po -o seu_idioma.mo` (o GLPI carrega o `.mo`) e contribua!
 
 ---
 

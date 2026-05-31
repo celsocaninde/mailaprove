@@ -18,6 +18,8 @@ if (empty($rawToken)) {
 
 $result = Token::validateTokenWithStatus($rawToken);
 
+PublicAction::applyRecipientLocale($result['data'] ?? null);
+
 if (!$result['valid']) {
     PublicAction::renderError(PublicAction::tokenErrorContent($result['error']));
     exit;

@@ -55,22 +55,23 @@ ob_start();
         <label style="text-align: center;">
             <?= __('Sua nota', 'mailaprove') ?> <span style="color: #b91c1c;">*</span>
         </label>
-        <div class="abm-stars">
-            <input type="radio" id="star5" name="satisfaction" value="5">
-            <label for="star5" title="5 - <?= __('Excelente', 'mailaprove') ?>">&#9733;</label>
-
-            <input type="radio" id="star4" name="satisfaction" value="4">
-            <label for="star4" title="4 - <?= __('Muito bom', 'mailaprove') ?>">&#9733;</label>
-
-            <input type="radio" id="star3" name="satisfaction" value="3">
-            <label for="star3" title="3 - <?= __('Bom', 'mailaprove') ?>">&#9733;</label>
-
-            <input type="radio" id="star2" name="satisfaction" value="2">
-            <label for="star2" title="2 - <?= __('Regular', 'mailaprove') ?>">&#9733;</label>
-
-            <input type="radio" id="star1" name="satisfaction" value="1">
-            <label for="star1" title="1 - <?= __('Ruim', 'mailaprove') ?>">&#9733;</label>
+        <div class="abm-stars" role="radiogroup" aria-label="<?= __('Sua nota', 'mailaprove') ?>">
+            <?php
+            $abmRatings = [
+                5 => '5 - ' . __('Excelente', 'mailaprove'),
+                4 => '4 - ' . __('Muito bom', 'mailaprove'),
+                3 => '3 - ' . __('Bom', 'mailaprove'),
+                2 => '2 - ' . __('Regular', 'mailaprove'),
+                1 => '1 - ' . __('Ruim', 'mailaprove'),
+            ];
+            foreach ($abmRatings as $abmValue => $abmRatingLabel):
+                $abmRatingLabel = htmlspecialchars($abmRatingLabel, ENT_QUOTES, 'UTF-8');
+            ?>
+                <input type="radio" id="star<?= $abmValue ?>" name="satisfaction" value="<?= $abmValue ?>" aria-label="<?= $abmRatingLabel ?>"<?= (int) ($_POST['satisfaction'] ?? 0) === $abmValue ? ' checked' : '' ?>>
+                <label for="star<?= $abmValue ?>" title="<?= $abmRatingLabel ?>" aria-hidden="true">&#9733;</label>
+            <?php endforeach; ?>
         </div>
+        <p class="abm-rating-live" data-abm-rating-live aria-live="polite"></p>
     </div>
 
     <div class="abm-form-group">

@@ -193,9 +193,9 @@ mailaprove/
 │   ├── action_confirm.php    # Confirmation page
 │   ├── reject_form.php       # Rejection form UI
 │   └── satisfaction_form.php # Satisfaction survey UI
-└── locale/
-    ├── en_US.po              # English translations
-    └── pt_BR.po              # Portuguese (Brazil) translations
+└── locales/
+    ├── en_US.po / en_US.mo   # English translations (source + compiled)
+    └── pt_BR.po / pt_BR.mo   # Portuguese (Brazil) translations (source + compiled)
 ```
 
 ---
@@ -263,7 +263,7 @@ Mail Approve supports multiple languages:
 - 🇺🇸 **English (en_US)**
 - 🇧🇷 **Portuguese - Brazil (pt_BR)**
 
-To add more languages, edit `.po` files in `locale/` and contribute!
+To add more languages, edit `.po` files in `locales/` and contribute!
 
 ---
 
@@ -306,7 +306,6 @@ Built with ❤️ for GLPI administrators and users worldwide.
 - 📖 **Documentation**: [Wiki](https://github.com/celsocaninde/mailaprove/wiki)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/celsocaninde/mailaprove/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/celsocaninde/mailaprove/discussions)
-- 📧 **Email**: contact@example.com
 
 ---
 
@@ -327,4 +326,4 @@ Built with ❤️ for GLPI administrators and users worldwide.
 - The endpoint hashes the token from the URL, looks it up in the database, verifies expiration and usage, and processes the action as the authorized user.
 
 ## Translations
-Includes English (`en_US`) and Brazilian Portuguese (`pt_BR`) translations. To add more, use Poedit to translate `locale/en_US.po` and save it as `your_lang.mo` in the `locale` directory.
+Includes English (`en_US`) and Brazilian Portuguese (`pt_BR`) translations. To add more, use Poedit to translate `locales/en_US.po` and save it as `your_lang.po` in the `locales/` directory, then compile it (`msgfmt your_lang.po -o your_lang.mo`). GLPI loads the compiled `.mo` files, so the `.mo` must be present.

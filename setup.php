@@ -1,6 +1,6 @@
 <?php
 
-define('PLUGIN_MAILAPROVE_VERSION', '1.0.3');
+define('PLUGIN_MAILAPROVE_VERSION', '1.0.4');
 define('PLUGIN_MAILAPROVE_MIN_GLPI', '11.0.0');
 define('PLUGIN_MAILAPROVE_MAX_GLPI', '11.99.99');
 
@@ -12,9 +12,9 @@ function plugin_version_mailaprove(): array
     return [
         'name'           => 'Approval By Mail',
         'version'        => PLUGIN_MAILAPROVE_VERSION,
-        'author'         => 'Community',
+        'author'         => 'Celso Caninde',
         'license'        => 'GPLv3+',
-        'homepage'       => 'https://github.com/community/mailaprove',
+        'homepage'       => 'https://github.com/celsocaninde/mailaprove',
         'minGlpiVersion' => PLUGIN_MAILAPROVE_MIN_GLPI,
         'maxGlpiVersion' => PLUGIN_MAILAPROVE_MAX_GLPI,
         'requirements'   => [

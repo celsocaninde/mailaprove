@@ -21,6 +21,8 @@ $result = $isPost
     ? Token::claimTokenWithStatus($rawToken, Token::ACTION_VALIDATION_APPROVE)
     : Token::validateTokenWithStatus($rawToken);
 
+PublicAction::applyRecipientLocale($result['data'] ?? null);
+
 if (!$result['valid']) {
     PublicAction::renderError(PublicAction::tokenErrorContent($result['error']));
     exit;

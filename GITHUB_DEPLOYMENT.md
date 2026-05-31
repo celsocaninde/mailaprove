@@ -77,9 +77,9 @@ mailaprove/
 │   ├── layout.php
 │   ├── reject_form.php
 │   └── satisfaction_form.php
-└── 📁 locale/
-    ├── en_US.po
-    └── pt_BR.po
+└── 📁 locales/
+    ├── en_US.po / en_US.mo
+    └── pt_BR.po / pt_BR.mo
 ```
 
 ---

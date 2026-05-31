@@ -195,17 +195,20 @@ foreach ($DB->request([
     }
 
     .mailaprove-hero {
+        position: relative;
+        overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
-        padding: 1.25rem;
-        border: 1px solid var(--mailaprove-border);
-        border-radius: 8px;
+        padding: 1.75rem 1.85rem;
+        border: 0;
+        border-radius: 16px;
+        color: #fff;
         background:
-            linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(15, 118, 110, 0.08)),
-            var(--mailaprove-surface);
-        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+            radial-gradient(circle at 92% -30%, rgba(255, 255, 255, 0.25), transparent 40%),
+            linear-gradient(135deg, #4338ca 0%, #2563eb 52%, #0e7490 100%);
+        box-shadow: 0 20px 48px rgba(37, 99, 235, 0.28);
     }
 
     .mailaprove-hero__main {
@@ -216,42 +219,46 @@ foreach ($DB->request([
     }
 
     .mailaprove-hero__icon {
-        width: 48px;
-        height: 48px;
+        width: 58px;
+        height: 58px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 8px;
+        border-radius: 16px;
+        font-size: 1.5rem;
         color: #fff;
-        background: linear-gradient(135deg, var(--mailaprove-primary), var(--mailaprove-accent));
-        box-shadow: 0 12px 22px rgba(37, 99, 235, 0.22);
+        background: rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.28);
         flex: 0 0 auto;
     }
 
     .mailaprove-hero__title {
         margin: 0;
-        font-size: 1.35rem;
-        font-weight: 750;
-        letter-spacing: 0;
+        font-size: 1.6rem;
+        font-weight: 850;
+        letter-spacing: -0.01em;
+        color: #fff;
     }
 
     .mailaprove-hero__subtitle {
-        margin: 0.2rem 0 0;
-        color: var(--mailaprove-muted);
-        font-size: 0.92rem;
+        margin: 0.25rem 0 0;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: 0.95rem;
     }
 
     .mailaprove-status {
         display: flex;
         align-items: center;
         gap: 0.55rem;
-        padding: 0.55rem 0.75rem;
-        border-radius: 8px;
-        border: 1px solid rgba(15, 118, 110, 0.24);
-        background: rgba(15, 118, 110, 0.08);
-        color: var(--mailaprove-accent);
-        font-weight: 700;
+        padding: 0.6rem 0.9rem;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.18);
+        color: #fff;
+        font-weight: 800;
         white-space: nowrap;
+        backdrop-filter: blur(2px);
     }
 
     .mailaprove-grid {
@@ -264,9 +271,9 @@ foreach ($DB->request([
 
     .mailaprove-panel {
         border: 1px solid var(--mailaprove-border);
-        border-radius: 8px;
+        border-radius: 14px;
         background: var(--mailaprove-surface);
-        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
         overflow: hidden;
     }
 
@@ -742,10 +749,23 @@ foreach ($DB->request([
     .mailaprove-save {
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
-        border-radius: 8px;
-        padding: 0.62rem 1rem;
-        font-weight: 750;
+        gap: 0.55rem;
+        border: 0;
+        border-radius: 12px;
+        padding: 0.8rem 1.6rem;
+        font-size: 1rem;
+        font-weight: 850;
+        color: #fff;
+        background: linear-gradient(135deg, #2563eb, #0e7490);
+        box-shadow: 0 12px 26px rgba(37, 99, 235, 0.30);
+        transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .mailaprove-save:hover {
+        color: #fff;
+        filter: brightness(1.06);
+        transform: translateY(-1px);
+        box-shadow: 0 18px 32px rgba(37, 99, 235, 0.36);
     }
 
     @media (max-width: 992px) {

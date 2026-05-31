@@ -11,6 +11,41 @@ use User;
 
 class PublicAction
 {
+    /**
+     * Render the public mail pages in the recipient's own language.
+     *
+     * These endpoints are stateless (no GLPI session), so without this the
+     * pages always fall back to the instance default language. The token is
+     * tied to a user, so we honour that user's language preference instead.
+     *
+     * @param array|null $tokenData Token row (must contain users_id) or null.
+     */
+    public static function applyRecipientLocale($tokenData): void
+    {
+        if (!is_array($tokenData)) {
+            return;
+        }
+
+        $userId = (int) ($tokenData['users_id'] ?? 0);
+        if ($userId <= 0) {
+            return;
+        }
+
+        $user = new User();
+        if (!$user->getFromDB($userId)) {
+            return;
+        }
+
+        $lang = trim((string) ($user->fields['language'] ?? ''));
+        if ($lang === '') {
+            return;
+        }
+
+        if (method_exists(\Session::class, 'loadLanguage')) {
+            \Session::loadLanguage($lang, true);
+        }
+    }
+
     public static function tokenErrorContent(?string $error): array
     {
         return match ($error) {

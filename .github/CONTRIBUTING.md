@@ -70,9 +70,10 @@ test: add test coverage for Z
 ## 🌍 Localization
 
 To contribute translations:
-1. Edit `.po` files in `locale/` directory
+1. Edit `.po` files in `locales/` directory
 2. Use a PO editor (Poedit, VS Code PO extension, etc.)
-3. Test translations locally
+3. Compile to `.mo` (`msgfmt xx_XX.po -o xx_XX.mo`) — GLPI loads the compiled `.mo`
+4. Test translations locally
 4. Submit pull request
 
 ## 🐛 Reporting Bugs
