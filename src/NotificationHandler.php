@@ -11,12 +11,6 @@ use CommonITILValidation;
 
 class NotificationHandler
 {
-    /**
-     * Hook callback for ITEM_GET_DATA on NotificationTargetTicket.
-     * Called when GLPI assembles notification data for ticket-related events.
-     *
-     * @param NotificationTargetTicket $target
-     */
     public static function handleNotificationData(NotificationTargetTicket $target): void
     {
         $config = Config::getConfig();
@@ -28,9 +22,6 @@ class NotificationHandler
         self::populateTagData($target, $config);
     }
 
-    /**
-     * Register custom tags in the notification template system.
-     */
     private static function registerTags(NotificationTargetTicket $target, array $config): void
     {
         if (!empty($config['enable_validation'])) {
@@ -91,9 +82,6 @@ class NotificationHandler
         }
     }
 
-    /**
-     * Populate tag values with generated token URLs.
-     */
     private static function populateTagData(NotificationTargetTicket $target, array $config): void
     {
         // Get the ticket object
@@ -133,23 +121,26 @@ class NotificationHandler
 
     /**
      * Get the recipient user ID from the notification target.
+     *
+     * In GLPI 11, the recipient is stored in $target->recipient_data during
+     * the ITEM_GET_DATA hook (set from $options['additionnaloption']['users_id']).
+     * Older GLPI versions used $target->options['users_id'].
      */
     private static function getRecipientUserId(NotificationTargetTicket $target): int
     {
-        // Try to get from current recipient data
-        if (!empty($target->data['##lang.validation.validator##'])
-            || !empty($target->data['##validation.validator##'])
+        // GLPI 11: recipient is passed as recipient_data during ITEM_GET_DATA hook
+        if (
+            !empty($target->recipient_data['items_id'])
+            && ($target->recipient_data['itemtype'] ?? '') === 'User'
         ) {
-            // For validation events, the recipient is the validator
-            // Try to find the users_id_validate from the ticket validations
+            return (int)$target->recipient_data['items_id'];
         }
 
-        // Try options
+        // Fallback for older GLPI versions
         if (isset($target->options['users_id'])) {
             return (int)$target->options['users_id'];
         }
 
-        // Try to get from the notification recipient
         if (isset($target->data['##user.id##'])) {
             return (int)$target->data['##user.id##'];
         }
@@ -157,9 +148,6 @@ class NotificationHandler
         return 0;
     }
 
-    /**
-     * Generate and populate validation approval/rejection URLs.
-     */
     private static function populateValidationUrls(
         NotificationTargetTicket $target,
         int $ticketId,
@@ -167,30 +155,60 @@ class NotificationHandler
     ): void {
         global $DB;
 
-        $where = [
-            'tickets_id' => $ticketId,
-            'status'     => CommonITILValidation::WAITING,
-        ];
-        if ($recipientUserId > 0) {
-            $where['users_id_validate'] = $recipientUserId;
-        }
+        // Prefer the validation_id passed directly in the event options (GLPI sets this
+        // for the 'validation' event). Fall back to a DB query when not available.
+        $validationId = isset($target->options['validation_id'])
+            ? (int)$target->options['validation_id']
+            : 0;
 
-        // Find a pending validation for the current recipient.
-        $iterator = $DB->request([
-            'FROM'  => 'glpi_ticketvalidations',
-            'WHERE' => $where,
-            'ORDER' => 'submission_date DESC',
-            'LIMIT' => 1,
-        ]);
+        if ($validationId > 0) {
+            $iterator = $DB->request([
+                'FROM'  => 'glpi_ticketvalidations',
+                'WHERE' => [
+                    'id'         => $validationId,
+                    'tickets_id' => $ticketId,
+                    'status'     => CommonITILValidation::WAITING,
+                ],
+                'LIMIT' => 1,
+            ]);
+        } else {
+            // Fallback: find any pending validation for this ticket (and recipient if known)
+            $where = [
+                'tickets_id' => $ticketId,
+                'status'     => CommonITILValidation::WAITING,
+            ];
+            if ($recipientUserId > 0) {
+                $where[] = [
+                    'OR' => [
+                        'users_id_validate' => $recipientUserId,
+                        [
+                            'itemtype_target' => 'User',
+                            'items_id_target' => $recipientUserId,
+                        ],
+                    ],
+                ];
+            }
+            $iterator = $DB->request([
+                'FROM'  => 'glpi_ticketvalidations',
+                'WHERE' => $where,
+                'ORDER' => 'submission_date DESC',
+                'LIMIT' => 1,
+            ]);
+        }
 
         if (count($iterator) === 0) {
             self::clearValidationTags($target);
             return;
         }
 
-        $validation = $iterator->current();
+        $validation  = $iterator->current();
         $validationId = (int)$validation['id'];
+
+        // GLPI 11 compat: validator lives in items_id_target when itemtype_target='User'
         $validatorId = (int)$validation['users_id_validate'];
+        if ($validatorId <= 0 && ($validation['itemtype_target'] ?? '') === 'User') {
+            $validatorId = (int)$validation['items_id_target'];
+        }
 
         // Use the actual validator as the authorized user
         $userId = $validatorId > 0 ? $validatorId : $recipientUserId;
@@ -228,16 +246,13 @@ class NotificationHandler
             __('Revise a validação solicitada para este chamado.', 'mailaprove'),
             $target->data['##ticket.validation.accepturl##'],
             __('Aprovar', 'mailaprove'),
-            '#0f766e',
+            '#2563eb',
             $target->data['##ticket.validation.rejecturl##'],
             __('Recusar', 'mailaprove'),
             '#b91c1c'
         );
     }
 
-    /**
-     * Generate and populate solution accept/reject URLs.
-     */
     private static function populateSolutionUrls(
         NotificationTargetTicket $target,
         int $ticketId,
@@ -306,9 +321,6 @@ class NotificationHandler
         );
     }
 
-    /**
-     * Generate and populate satisfaction survey URL.
-     */
     private static function populateSatisfactionUrls(
         NotificationTargetTicket $target,
         int $ticketId,
@@ -392,6 +404,7 @@ class NotificationHandler
         }
 
         return self::renderButtonShell(
+            $target,
             $message,
             self::renderButton($primaryUrl, $primaryLabel, $primaryColor)
             . ' '
@@ -444,7 +457,7 @@ class NotificationHandler
             return $custom;
         }
 
-        return self::renderButtonShell($message, self::renderButton($url, $label, $color));
+        return self::renderButtonShell($target, $message, self::renderButton($url, $label, $color));
     }
 
     private static function renderCustomTemplate(string $configKey, NotificationTargetTicket $target, array $values): string
@@ -469,21 +482,58 @@ class NotificationHandler
         return strtr($template, $replace);
     }
 
-    private static function renderButtonShell(string $message, string $buttons): string
+    private static function renderButtonShell(NotificationTargetTicket $target, string $message, string $buttons): string
     {
-        return '<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%; margin:18px 0;">'
-            . '<tr><td style="padding:16px; border:1px solid #d9e1ec; border-radius:8px; background:#f8fafc;">'
-            . '<p style="margin:0 0 12px; color:#344054; font-size:14px;">' . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</p>'
+        $context = self::ticketContextHtml($target);
+        $note    = htmlspecialchars(
+            __('Este link é pessoal, de uso único e expira automaticamente.', 'mailaprove'),
+            ENT_QUOTES,
+            'UTF-8'
+        );
+
+        return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="width:100%; margin:18px 0; border-collapse:collapse;">'
+            . '<tr><td style="padding:20px 22px; border:1px solid #d9e1ec; border-radius:10px; background:#f8fafc;">'
+            . $context
+            . '<p style="margin:0 0 14px; color:#344054; font-family:Arial,Helvetica,sans-serif; font-size:14px; line-height:1.5;">'
+            . htmlspecialchars($message, ENT_QUOTES, 'UTF-8') . '</p>'
             . $buttons
+            . '<p style="margin:14px 0 0; color:#98a2b3; font-family:Arial,Helvetica,sans-serif; font-size:12px; line-height:1.5;">' . $note . '</p>'
             . '</td></tr></table>';
     }
 
+    private static function ticketContextHtml(NotificationTargetTicket $target): string
+    {
+        $ticket = $target->obj ?? null;
+        if (!($ticket instanceof Ticket) || empty($ticket->fields['id'])) {
+            return '';
+        }
+
+        $id    = (int) $ticket->fields['id'];
+        $title = trim((string) ($ticket->fields['name'] ?? ''));
+
+        $badge = '<span style="display:inline-block; padding:3px 11px; border-radius:999px; background:#2563eb; color:#ffffff; font-family:Arial,Helvetica,sans-serif; font-size:12px; font-weight:700;">'
+            . htmlspecialchars(sprintf(__('Chamado #%d', 'mailaprove'), $id), ENT_QUOTES, 'UTF-8')
+            . '</span>';
+
+        $titleHtml = '';
+        if ($title !== '') {
+            $titleHtml = '<div style="margin:8px 0 0; color:#101828; font-family:Arial,Helvetica,sans-serif; font-size:15px; font-weight:700; line-height:1.35;">'
+                . htmlspecialchars($title, ENT_QUOTES, 'UTF-8') . '</div>';
+        }
+
+        return '<div style="margin:0 0 14px;">' . $badge . $titleHtml . '</div>';
+    }
+
+    // bgcolor + mso-padding-alt on the <td> so Outlook honours the button padding
     private static function renderButton(string $url, string $label, string $color): string
     {
-        return '<a href="' . htmlspecialchars($url, ENT_QUOTES, 'UTF-8') . '" style="display:inline-block; padding:10px 16px; margin:0 8px 8px 0; border-radius:6px; background:'
-            . htmlspecialchars($color, ENT_QUOTES, 'UTF-8')
-            . '; color:#ffffff; text-decoration:none; font-weight:700;">'
-            . htmlspecialchars($label, ENT_QUOTES, 'UTF-8')
-            . '</a>';
+        $u = htmlspecialchars($url, ENT_QUOTES, 'UTF-8');
+        $l = htmlspecialchars($label, ENT_QUOTES, 'UTF-8');
+        $c = htmlspecialchars($color, ENT_QUOTES, 'UTF-8');
+
+        return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="display:inline-block; vertical-align:top; margin:0 8px 8px 0; border-collapse:separate;">'
+            . '<tr><td bgcolor="' . $c . '" style="border-radius:8px; mso-padding-alt:12px 22px;">'
+            . '<a href="' . $u . '" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:12px 22px; border-radius:8px; background:' . $c . '; color:#ffffff; font-family:Arial,Helvetica,sans-serif; font-size:15px; font-weight:700; line-height:20px; text-decoration:none;">' . $l . '</a>'
+            . '</td></tr></table>';
     }
 }

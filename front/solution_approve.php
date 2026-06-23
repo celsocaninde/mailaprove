@@ -41,23 +41,31 @@ if (!$context['ok']) {
 }
 
 if (!$isPost) {
-    $confirmTitle = __('Confirmar aceite da solução', 'mailaprove');
-    $confirmMessage = __('Revise o chamado antes de aceitar esta solução por e-mail.', 'mailaprove');
-    $confirmButton = __('Aceitar solução', 'mailaprove');
-    $confirmType = 'success';
-    $confirmNote = __('Após confirmar, a solução será marcada como aceita no GLPI e os links relacionados serão invalidados.', 'mailaprove');
-    $actionUrl = 'solution_approve.php';
-    $ticketSummary = $context['ticket'];
+    $confirmTitle               = __('Confirmar aceite da solução', 'mailaprove');
+    $confirmMessage             = __('Revise o chamado antes de aceitar esta solução por e-mail.', 'mailaprove');
+    $confirmButton              = __('Aceitar solução', 'mailaprove');
+    $confirmType                = 'success';
+    $confirmNote                = __('Após confirmar, a solução será marcada como aceita no GLPI e os links relacionados serão invalidados.', 'mailaprove');
+    $confirmShowComment         = true;
+    $confirmCommentLabel        = __('Comentário adicional (opcional)', 'mailaprove');
+    $confirmCommentPlaceholder  = __('Deixe em branco para registrar "Solução aceita por e-mail"...', 'mailaprove');
+    $actionUrl                  = 'solution_approve.php';
+    $ticketSummary              = $context['ticket'];
     include(GLPI_ROOT . '/plugins/mailaprove/templates/action_confirm.php');
     exit;
+}
+
+$comment = trim($_POST['comment_validation'] ?? '');
+if ($comment === '') {
+    $comment = __('Solução aceita por e-mail', 'mailaprove');
 }
 
 $solution = $context['item'];
 $followup = new ITILFollowup();
 $followup->add([
-    'items_id'   => $tokenData['tickets_id'],
-    'itemtype'   => 'Ticket',
-    'content'    => __('Solução aceita por e-mail', 'mailaprove'),
+    'items_id'        => $tokenData['tickets_id'],
+    'itemtype'        => 'Ticket',
+    'content'         => $comment,
     'requesttypes_id' => 0,
 ]);
 

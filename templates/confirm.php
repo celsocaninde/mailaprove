@@ -13,7 +13,7 @@ $icon = $iconType === 'success' ? '&#10004;' : '&#9888;';
 
 ob_start();
 ?>
-<div class="abm-icon <?= htmlspecialchars($iconType) ?>">
+<div class="abm-icon <?= htmlspecialchars($iconType) ?>" aria-hidden="true">
     <?= $icon ?>
 </div>
 <h2 class="abm-title"><?= htmlspecialchars($confirmTitle ?? __('Ação concluída', 'mailaprove'), ENT_QUOTES, 'UTF-8') ?></h2>

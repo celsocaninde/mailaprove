@@ -1,16 +1,7 @@
 <?php
-/**
- * Error page template.
- *
- * Variables:
- * - $errorTitle (string)
- * - $errorMessage (string)
- * - $error (string): error type code
- */
-
 ob_start();
 ?>
-<div class="abm-icon error">
+<div class="abm-icon error" aria-hidden="true">
     &#10006;
 </div>
 <h2 class="abm-title"><?= htmlspecialchars($errorTitle ?? __('Erro', 'mailaprove'), ENT_QUOTES, 'UTF-8') ?></h2>

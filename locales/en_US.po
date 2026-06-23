@@ -47,6 +47,9 @@ msgstr "requester: %s"
 msgid "Chamado #%d"
 msgstr "Ticket #%d"
 
+msgid "Este link é pessoal, de uso único e expira automaticamente."
+msgstr "This link is personal, single-use and expires automatically."
+
 msgid "Validação não encontrada"
 msgstr "Validation not found"
 

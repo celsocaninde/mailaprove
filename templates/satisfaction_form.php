@@ -20,7 +20,7 @@ $ticketPreview = trim((string) ($ticketSummary['preview'] ?? ''));
 
 ob_start();
 ?>
-<div class="abm-icon info">
+<div class="abm-icon info" aria-hidden="true">
     &#9733;
 </div>
 <h2 class="abm-title"><?= __('Pesquisa de satisfação', 'mailaprove') ?></h2>

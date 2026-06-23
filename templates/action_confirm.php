@@ -33,7 +33,7 @@ $ticketPreview = trim((string) ($ticketSummary['preview'] ?? ''));
 
 ob_start();
 ?>
-<div class="abm-icon <?= htmlspecialchars($confirmType, ENT_QUOTES, 'UTF-8') ?>">
+<div class="abm-icon <?= htmlspecialchars($confirmType, ENT_QUOTES, 'UTF-8') ?>" aria-hidden="true">
     <?= $icon ?>
 </div>
 <h2 class="abm-title"><?= htmlspecialchars($confirmTitle ?? __('Confirmar ação', 'mailaprove'), ENT_QUOTES, 'UTF-8') ?></h2>
@@ -60,6 +60,24 @@ ob_start();
         <p>
             <?= htmlspecialchars($confirmNote ?? __('Esta ação será registrada no GLPI e o link não poderá ser usado novamente.', 'mailaprove'), ENT_QUOTES, 'UTF-8') ?>
         </p>
+
+        <?php if (!empty($confirmShowComment)): ?>
+        <div class="abm-form-group" style="margin-top:16px;">
+            <label for="confirm_comment" style="display:block; margin-bottom:6px; font-size:13px; font-weight:600; color:#344054;">
+                <?= htmlspecialchars($confirmCommentLabel ?? __('Comentário (opcional)', 'mailaprove'), ENT_QUOTES, 'UTF-8') ?>
+            </label>
+            <textarea
+                id="confirm_comment"
+                name="comment_validation"
+                rows="4"
+                placeholder="<?= htmlspecialchars($confirmCommentPlaceholder ?? __('Deixe em branco para usar o texto padrão de aprovação...', 'mailaprove'), ENT_QUOTES, 'UTF-8') ?>"
+                style="width:100%; box-sizing:border-box; padding:10px 12px; border:1px solid #d0d5dd;
+                       border-radius:8px; font-size:14px; color:#1e293b; resize:vertical;
+                       font-family:inherit; line-height:1.5;"
+            ><?= htmlspecialchars($_POST['comment_validation'] ?? '', ENT_QUOTES, 'UTF-8') ?></textarea>
+        </div>
+        <?php endif; ?>
+
         <div class="abm-actions">
             <button type="submit" class="abm-btn <?= htmlspecialchars($buttonClass, ENT_QUOTES, 'UTF-8') ?>">
                 <?= $icon ?> <?= htmlspecialchars($confirmButton ?? __('Confirmar', 'mailaprove'), ENT_QUOTES, 'UTF-8') ?>

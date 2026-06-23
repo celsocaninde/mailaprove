@@ -94,7 +94,7 @@ $templateSnippets = [
   <tr>
     <td style="padding:16px; border:1px solid #d9e1ec; border-radius:8px; background:#f8fafc;">
       <p style="margin:0 0 12px; color:#344054; font-size:14px;">Revise a validação solicitada para este chamado.</p>
-      <a href="##ticket.validation.accepturl##" style="display:inline-block; padding:10px 16px; margin-right:8px; border-radius:6px; background:#0f766e; color:#ffffff; text-decoration:none; font-weight:700;">Aprovar</a>
+      <a href="##ticket.validation.accepturl##" style="display:inline-block; padding:10px 16px; margin-right:8px; border-radius:6px; background:#2563eb; color:#ffffff; text-decoration:none; font-weight:700;">Aprovar</a>
       <a href="##ticket.validation.rejecturl##" style="display:inline-block; padding:10px 16px; border-radius:6px; background:#b91c1c; color:#ffffff; text-decoration:none; font-weight:700;">Rejeitar</a>
     </td>
   </tr>
@@ -136,7 +136,7 @@ $customTemplateFields = [
         'description' => __('Variáveis disponíveis: {{approve_url}}, {{reject_url}}, {{ticket_id}}, {{ticket_name}}.', 'mailaprove'),
         'example'     => '<p>Chamado #{{ticket_id}}: {{ticket_name}}</p>
 <p>
-  <a href="{{approve_url}}" style="display:inline-block;padding:10px 16px;background:#0f766e;color:#fff;text-decoration:none;border-radius:6px;">Aprovar</a>
+  <a href="{{approve_url}}" style="display:inline-block;padding:10px 16px;background:#2563eb;color:#fff;text-decoration:none;border-radius:6px;">Aprovar</a>
   <a href="{{reject_url}}" style="display:inline-block;padding:10px 16px;background:#b91c1c;color:#fff;text-decoration:none;border-radius:6px;">Rejeitar</a>
 </p>',
     ],
@@ -183,7 +183,7 @@ foreach ($DB->request([
 <style>
     .mailaprove-page {
         --mailaprove-primary: #2563eb;
-        --mailaprove-accent: #0f766e;
+        --mailaprove-accent: #2563eb;
         --mailaprove-warning: #b45309;
         --mailaprove-border: var(--tblr-border-color, #d9dee8);
         --mailaprove-surface: var(--tblr-bg-surface, #fff);
@@ -203,12 +203,12 @@ foreach ($DB->request([
         gap: 1rem;
         padding: 1.75rem 1.85rem;
         border: 0;
-        border-radius: 16px;
+        border-radius: 12px;
         color: #fff;
         background:
             radial-gradient(circle at 92% -30%, rgba(255, 255, 255, 0.25), transparent 40%),
-            linear-gradient(135deg, #4338ca 0%, #2563eb 52%, #0e7490 100%);
-        box-shadow: 0 20px 48px rgba(37, 99, 235, 0.28);
+            linear-gradient(135deg, #1e40af 0%, #2563eb 52%, #1d4ed8 100%);
+        box-shadow: 0 8px 22px rgba(37, 99, 235, 0.14);
     }
 
     .mailaprove-hero__main {
@@ -273,7 +273,7 @@ foreach ($DB->request([
         border: 1px solid var(--mailaprove-border);
         border-radius: 14px;
         background: var(--mailaprove-surface);
-        box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
         overflow: hidden;
     }
 
@@ -602,7 +602,7 @@ foreach ($DB->request([
         padding: 1rem;
         border: 1px solid var(--mailaprove-border);
         border-radius: 8px;
-        background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(15, 118, 110, 0.06));
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(37, 99, 235, 0.06));
     }
 
     .mailaprove-preview-card__title {
@@ -636,7 +636,7 @@ foreach ($DB->request([
     }
 
     .mailaprove-preview-actions .is-approve {
-        background: #0f766e;
+        background: #2563eb;
     }
 
     .mailaprove-preview-actions .is-primary {
@@ -716,8 +716,8 @@ foreach ($DB->request([
     }
 
     .mailaprove-audit-badge--success {
-        color: #0f766e;
-        background: rgba(15, 118, 110, 0.1);
+        color: #1d4ed8;
+        background: rgba(29, 78, 216, 0.12);
     }
 
     .mailaprove-audit-badge--warning {
@@ -756,8 +756,8 @@ foreach ($DB->request([
         font-size: 1rem;
         font-weight: 850;
         color: #fff;
-        background: linear-gradient(135deg, #2563eb, #0e7490);
-        box-shadow: 0 12px 26px rgba(37, 99, 235, 0.30);
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.18);
         transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
     }
 
@@ -800,6 +800,16 @@ foreach ($DB->request([
 
         .mailaprove-audit-stats {
             grid-template-columns: 1fr;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .mailaprove-feature,
+        .mailaprove-feature:hover,
+        .mailaprove-save,
+        .mailaprove-save:hover {
+            transition: none;
+            transform: none;
         }
     }
 </style>

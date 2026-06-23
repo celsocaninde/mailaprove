@@ -10,6 +10,14 @@ class Token extends CommonDBTM
     public static $table = 'glpi_plugin_mailaprove_tokens';
     public static $rightname = 'plugin_mailaprove_token';
 
+    /**
+     * Per-request cache: maps "actionType:ticketId:itemId:userId" → rawToken.
+     * Prevents multiple hook invocations for the same notification event from
+     * generating a new token each time (which would invalidate the previous one
+     * already embedded in an earlier email body).
+     */
+    private static array $tokenCache = [];
+
     // Action type constants
     const ACTION_VALIDATION_APPROVE = 'validation_approve';
     const ACTION_VALIDATION_REJECT  = 'validation_reject';
@@ -17,16 +25,6 @@ class Token extends CommonDBTM
     const ACTION_SOLUTION_REJECT    = 'solution_reject';
     const ACTION_SATISFACTION       = 'satisfaction';
 
-    /**
-     * Generate a new token for an action.
-     *
-     * @param string $actionType One of the ACTION_* constants
-     * @param int    $ticketId   The ticket ID
-     * @param int    $itemId     The target item ID (validation ID, satisfaction ID, etc.)
-     * @param int    $userId     The user authorized to perform the action
-     *
-     * @return string|false The raw token string, or false on failure
-     */
     public static function generateToken(
         string $actionType,
         int $ticketId,
@@ -34,6 +32,16 @@ class Token extends CommonDBTM
         int $userId
     ) {
         self::ensureSchema();
+
+        // Per-request cache: when GLPI fires ITEM_GET_DATA once per notification
+        // recipient for the same event, every call would create a new token and
+        // invalidate the previous one (breaking links already embedded in emails).
+        // Return the cached raw token for the same action+ticket+item+user within
+        // the same PHP request so all notifications share the same valid link.
+        $cacheKey = "{$actionType}:{$ticketId}:{$itemId}:{$userId}";
+        if (isset(self::$tokenCache[$cacheKey])) {
+            return self::$tokenCache[$cacheKey];
+        }
 
         // Generate cryptographically secure random token
         $rawToken = bin2hex(random_bytes(32));
@@ -70,56 +78,12 @@ class Token extends CommonDBTM
             'users_id'    => $userId,
         ]);
 
+        // Cache so subsequent calls in the same request reuse this token
+        self::$tokenCache[$cacheKey] = $rawToken;
+
         return $rawToken;
     }
 
-    /**
-     * Validate a raw token and return the token data if valid.
-     *
-     * @param string $rawToken The raw token from the URL
-     *
-     * @return array|false Token data array on success, false on failure
-     */
-    public static function validateToken(string $rawToken)
-    {
-        global $DB;
-
-        $tokenHash = hash('sha256', $rawToken);
-
-        $iterator = $DB->request([
-            'FROM'  => self::$table,
-            'WHERE' => [
-                'token_hash' => $tokenHash,
-            ],
-            'LIMIT' => 1,
-        ]);
-
-        if (count($iterator) === 0) {
-            return false; // Token not found
-        }
-
-        $data = $iterator->current();
-
-        // Check if already used
-        if ((int)$data['is_used'] === 1) {
-            return false;
-        }
-
-        // Check expiration
-        if (strtotime($data['date_expiration']) < time()) {
-            return false;
-        }
-
-        return $data;
-    }
-
-    /**
-     * Validate token and return detailed status for error messages.
-     *
-     * @param string $rawToken
-     *
-     * @return array ['valid' => bool, 'error' => string|null, 'data' => array|null]
-     */
     public static function validateTokenWithStatus(string $rawToken): array
     {
         global $DB;
@@ -183,17 +147,8 @@ class Token extends CommonDBTM
         ];
     }
 
-    /**
-     * Validate and atomically claim a token before performing an action.
-     *
-     * This prevents double clicks, mail security scanners, and concurrent tabs
-     * from processing the same mail action more than once.
-     *
-     * @param string      $rawToken
-     * @param string|null $expectedActionType
-     *
-     * @return array ['valid' => bool, 'error' => string|null, 'data' => array|null]
-     */
+    // Atomically claims the token to prevent double-clicks and mail scanner pre-fetch
+    // from processing the same action more than once.
     public static function claimTokenWithStatus(string $rawToken, ?string $expectedActionType = null): array
     {
         global $DB;
@@ -353,38 +308,6 @@ class Token extends CommonDBTM
         ];
     }
 
-    /**
-     * Mark a token as used.
-     *
-     * @param int $tokenId
-     *
-     * @return bool
-     */
-    public static function markAsUsed(int $tokenId): bool
-    {
-        self::ensureSchema();
-
-        $token = new self();
-        $updated = $token->update(array_merge([
-            'id'      => $tokenId,
-            'is_used' => 1,
-        ], self::usageMetadata('used')));
-
-        if ($updated && $token->getFromDB($tokenId)) {
-            AuditLog::record('token_used', 'success', AuditLog::contextFromTokenRow($token->fields));
-        }
-
-        return $updated;
-    }
-
-    /**
-     * Build the full action URL for a given token.
-     *
-     * @param string $rawToken   The raw token string
-     * @param string $actionType The action type (determines the endpoint)
-     *
-     * @return string The full URL
-     */
     public static function buildActionUrl(string $rawToken, string $actionType): string
     {
         global $CFG_GLPI;

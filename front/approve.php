@@ -9,7 +9,6 @@ use GlpiPlugin\Mailaprove\AuditLog;
 $rawToken = $_POST['token'] ?? $_GET['token'] ?? '';
 
 if (empty($rawToken)) {
-    $error = 'missing_token';
     $errorTitle = __('Token ausente', 'mailaprove');
     $errorMessage = __('Nenhum token de aprovação foi informado. Use o link original recebido por e-mail.', 'mailaprove');
     include(GLPI_ROOT . '/plugins/mailaprove/templates/error.php');
@@ -42,23 +41,38 @@ if (!$context['ok']) {
 }
 
 if (!$isPost) {
-    $confirmTitle = __('Confirmar aprovação', 'mailaprove');
-    $confirmMessage = __('Revise o chamado antes de aprovar esta validação por e-mail.', 'mailaprove');
-    $confirmButton = __('Aprovar validação', 'mailaprove');
-    $confirmType = 'success';
-    $confirmNote = __('Após confirmar, a validação será aprovada no GLPI e os links relacionados serão invalidados.', 'mailaprove');
-    $actionUrl = 'approve.php';
-    $ticketSummary = $context['ticket'];
+    $confirmTitle               = __('Confirmar aprovação', 'mailaprove');
+    $confirmMessage             = __('Revise o chamado antes de aprovar esta validação por e-mail.', 'mailaprove');
+    $confirmButton              = __('Aprovar validação', 'mailaprove');
+    $confirmType                = 'success';
+    $confirmNote                = __('Após confirmar, a validação será aprovada no GLPI e os links relacionados serão invalidados.', 'mailaprove');
+    $confirmShowComment         = true;
+    $confirmCommentLabel        = __('Comentário adicional (opcional)', 'mailaprove');
+    $confirmCommentPlaceholder  = __('Deixe em branco para registrar "Aprovado por e-mail"...', 'mailaprove');
+    $actionUrl                  = 'approve.php';
+    $ticketSummary              = $context['ticket'];
     include(GLPI_ROOT . '/plugins/mailaprove/templates/action_confirm.php');
     exit;
 }
 
-$validation = $context['item'];
-$updateResult = $validation->update([
-    'id'                 => (int)$tokenData['items_id'],
+$comment = trim($_POST['comment_validation'] ?? '');
+if ($comment === '') {
+    $comment = __('Aprovado por e-mail', 'mailaprove');
+}
+
+// Use DB update directly: the mailaprove token already proves authorization.
+// TicketValidation::update() runs canAnswer() against the web session user,
+// which is always unauthenticated on public pages — causing the ORM to silently
+// strip status/comment_validation from the input without saving anything.
+global $DB;
+$updateResult = $DB->update(TicketValidation::getTable(), [
     'status'             => CommonITILValidation::ACCEPTED,
-    'comment_validation' => __('Aprovado por e-mail', 'mailaprove'),
+    'comment_validation' => $comment,
     'validation_date'    => date('Y-m-d H:i:s'),
+], [
+    'id'         => (int)$tokenData['items_id'],
+    'tickets_id' => (int)$tokenData['tickets_id'],
+    'status'     => CommonITILValidation::WAITING,
 ]);
 
 if ($updateResult) {

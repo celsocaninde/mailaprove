@@ -9,7 +9,6 @@ use GlpiPlugin\Mailaprove\AuditLog;
 $rawToken = $_GET['token'] ?? $_POST['token'] ?? '';
 
 if (empty($rawToken)) {
-    $error = 'missing_token';
     $errorTitle = __('Token ausente', 'mailaprove');
     $errorMessage = __('Nenhum token de aprovação foi informado. Use o link original recebido por e-mail.', 'mailaprove');
     include(GLPI_ROOT . '/plugins/mailaprove/templates/error.php');
@@ -63,12 +62,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $validation = $context['item'];
-    $updateResult = $validation->update([
-        'id'                 => (int)$tokenData['items_id'],
+    // Use DB update directly: token already proves authorization.
+    // TicketValidation::update() strips status/comment via canAnswer() check.
+    global $DB;
+    $updateResult = $DB->update(TicketValidation::getTable(), [
         'status'             => CommonITILValidation::REFUSED,
         'comment_validation' => $comment,
         'validation_date'    => date('Y-m-d H:i:s'),
+    ], [
+        'id'         => (int)$tokenData['items_id'],
+        'tickets_id' => (int)$tokenData['tickets_id'],
+        'status'     => CommonITILValidation::WAITING,
     ]);
 
     if ($updateResult) {

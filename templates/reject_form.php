@@ -28,7 +28,7 @@ $ticketPreview = trim((string) ($ticketSummary['preview'] ?? ''));
 
 ob_start();
 ?>
-<div class="abm-icon warning">
+<div class="abm-icon warning" aria-hidden="true">
     &#9888;
 </div>
 <h2 class="abm-title"><?= htmlspecialchars($formTitle) ?></h2>

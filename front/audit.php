@@ -118,7 +118,7 @@ function mailaprove_audit_status_class(string $status): string
 <style>
     .mailaprove-audit-page {
         --mailaprove-primary: #2563eb;
-        --mailaprove-accent: #0f766e;
+        --mailaprove-accent: #2563eb;
         --mailaprove-border: var(--tblr-border-color, #d9dee8);
         --mailaprove-surface: var(--tblr-bg-surface, #fff);
         --mailaprove-muted: var(--tblr-secondary-color, #667085);
@@ -141,7 +141,7 @@ function mailaprove_audit_status_class(string $status): string
         gap: 1rem;
         padding: 1.2rem;
         background:
-            linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(15, 118, 110, 0.08)),
+            linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(37, 99, 235, 0.08)),
             var(--mailaprove-surface);
     }
 
@@ -224,7 +224,7 @@ function mailaprove_audit_status_class(string $status): string
         text-transform: uppercase;
     }
 
-    .mailaprove-audit-badge--success { color: #0f766e; background: rgba(15, 118, 110, 0.1); }
+    .mailaprove-audit-badge--success { color: #1d4ed8; background: rgba(29, 78, 216, 0.12); }
     .mailaprove-audit-badge--warning { color: #b45309; background: rgba(180, 83, 9, 0.1); }
     .mailaprove-audit-badge--error { color: #b91c1c; background: rgba(185, 28, 28, 0.1); }
     .mailaprove-audit-badge--info { color: #2563eb; background: rgba(37, 99, 235, 0.1); }
